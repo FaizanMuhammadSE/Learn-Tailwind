@@ -106,6 +106,73 @@ PostCSS is a tool for transforming CSS code using JavaScript plugins. It allows 
 
 PostCSS is not a CSS preprocessor like Sass or Less, but rather a postprocessor that takes CSS code as input and outputs transformed CSS code. This makes it a powerful tool for extending the capabilities of CSS and automating tasks that would otherwise be tedious or impossible to do by hand.
 
+#### Differences Between PreCSS and PostCSS
+
+##### What is PreCSS?
+
+PreCSS is a tool that allows you to use Sass-like markup in your CSS files. It extends the capabilities of CSS by providing features such as variables, nesting, and mixins, which are common in CSS preprocessors like Sass and Less.
+
+##### What is PostCSS?
+
+PostCSS is a tool for transforming CSS with JavaScript plugins. It processes your CSS after it has been written, allowing you to use plugins to add new features, optimize your code, or convert it to other formats.
+
+##### Key Differences
+
+1. **Purpose**:
+
+- **PreCSS**: Primarily used to extend the capabilities of CSS by adding features that are not natively supported.
+- **PostCSS**: Used to transform and optimize CSS code after it has been written, using a variety of plugins.
+
+2. **Syntax**:
+
+- **PreCSS**: Allows you to write CSS with extended syntax similar to Sass or Less.
+- **PostCSS**: Works with standard CSS syntax but transforms it using plugins.
+
+3. **Plugins**:
+
+- **PreCSS**: Typically includes built-in features like variables, nesting, and mixins.
+- **PostCSS**: Relies on a wide range of plugins to add functionality, such as autoprefixing, minification, and custom properties.
+
+4. **Workflow**:
+
+- **PreCSS**: Processes your CSS before it is compiled, adding features and capabilities.
+- **PostCSS**: Processes your CSS after it is written, optimizing and transforming it based on the plugins used.
+
+5. **Flexibility**:
+
+- **PreCSS**: Limited to the features provided by the preprocessor.
+- **PostCSS**: Highly flexible, as you can choose from a vast ecosystem of plugins to tailor your CSS processing workflow.
+
+##### Example of PreCSS
+
+```scss
+// Using variables and nesting in PreCSS
+$primary-color: #3490dc;
+
+.button {
+  background-color: $primary-color;
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+```
+
+###### Example of PostCSS
+
+```js
+// Using PostCSS with autoprefixer and cssnano plugins
+module.exports = {
+  plugins: [
+    require('autoprefixer'),
+    require('cssnano')({
+      preset: 'default',
+    }),
+  ],
+};
+```
+
+In summary, PreCSS and PostCSS serve different purposes in the CSS development workflow. PreCSS extends CSS capabilities before compilation, while PostCSS transforms and optimizes CSS after it has been written using a variety of plugins.
+
 #### How does PostCSS work?
 
 ---
